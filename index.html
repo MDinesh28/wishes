@@ -1,0 +1,248 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Birthday Wishes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Lora", serif;
+      }
+      .fade-in {
+        animation: fadeIn 2s ease-in-out;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      .zoom-in {
+        animation: zoomIn 0.5s ease-in-out;
+      }
+      @keyframes zoomIn {
+        from {
+          transform: scale(0.9);
+          opacity: 0;
+        }
+        to {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+      .image-hover:hover {
+        transform: scale(1.05);
+        filter: blur(3px);
+        transition: transform 0.3s ease, filter 0.3s ease;
+      }
+      .quote-animation {
+        animation: slideIn 1s ease-out;
+      }
+      @keyframes slideIn {
+        from {
+          transform: translateX(-50%);
+          opacity: 0;
+        }
+        to {
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+      .move-away {
+        position: absolute;
+        transition: transform 0.3s ease;
+      }
+      .heart-blast {
+        position: absolute;
+        font-size: 20px;
+        color: red;
+        animation: blast 1s ease-out forwards;
+        z-index: 10; /* Ensure hearts are on top */
+      }
+      @keyframes blast {
+        to {
+          transform: translate(100px, 100px);
+          opacity: 0;
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-pink-100 flex flex-col items-center justify-center min-h-screen">
+    <!-- Start Page -->
+    <div class="flex flex-col items-center justify-center space-y-4 fade-in" id="start-page">
+      <h1 class="text-4xl md:text-5xl text-pink-600 text-center">
+        Happy Birthday, pujita!
+      </h1>
+      <p class="text-xl md:text-2xl text-pink-500 text-center px-4">
+        You are special, so you deserve something very special.
+      </p>
+      <button class="text-6xl text-red-500 heart-beat" id="start-button">
+        <i class="fas fa-heart"></i>
+      </button>
+    </div>
+
+    <!-- Main Page -->
+    <div class="hidden flex-col items-center justify-center space-y-4 fade-in" id="main-page">
+      <h1 class="text-4xl md:text-5xl text-pink-600 text-center">
+        Birthday Wishes for You!
+      </h1>
+      <div class="relative w-full h-64">
+        <img
+          alt="A single red balloon floating in the air"
+          class="absolute rounded image-hover move-away"
+          height="200"
+          id="moving-balloon-1"
+          src="./p.jpeg"
+          style="top: 50%; left: 10%; transform: translate(-50%, -50%)"
+          width="100"
+        />
+        <img
+          alt="A single blue balloon floating in the air"
+          class="absolute rounded image-hover move-away"
+          height="200"
+          id="moving-balloon-2"
+          src="./u.jpeg"
+          style="top: 50%; left: 30%; transform: translate(-50%, -50%)"
+          width="100"
+        />
+        <img
+          alt="A single green balloon floating in the air"
+          class="absolute rounded image-hover move-away"
+          height="200"
+          id="moving-balloon-3"
+          src="./j.jpeg"
+          style="top: 50%; left: 50%; transform: translate(-50%, -50%)"
+          width="100"
+        />
+        <img
+          alt="A single yellow balloon floating in the air"
+          class="absolute rounded image-hover move-away"
+          height="200"
+          id="moving-balloon-4"
+          src="./i.jpeg"
+          style="top: 50%; left: 70%; transform: translate(-50%, -50%)"
+          width="100"
+        />
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 px-4">
+        <div class="p-4 bg-white rounded shadow-lg fade-in text-center zoom-in">
+          <img
+            alt="A beautifully decorated birthday cake with candles"
+            class="rounded mb-4 mx-auto image-hover"
+            height="200"
+            src="https://storage.googleapis.com/a1aa/image/BCMwMUj6mp6oHtpGTn5y9xydKLLeymxuvydl8c8yrX4oYQeTA.jpg"
+            width="300"
+          />
+          <p class="quote-animation">
+            "Wishing you a day filled with love and cheer. Happy Birthday!"
+          </p>
+        </div>
+        <div class="p-4 bg-white rounded shadow-lg fade-in text-center zoom-in">
+          <img
+            alt="A bunch of colorful balloons floating in the air"
+            class="rounded mb-4 mx-auto image-hover"
+            height="200"
+            src="https://storage.googleapis.com/a1aa/image/v6BCfOUV6k39ICOjSgk1ohjvBBnVeRHaIVwZYt1DBIpVxg8TA.jpg"
+            width="300"
+          />
+          <p class="quote-animation">
+            "May your birthday be as special as you are special to me in every way!"
+          </p>
+        </div>
+        <div
+          class="p-4 bg-white rounded shadow-lg fade-in text-center zoom-in relative"
+          id="gift-box-container"
+        >
+          <img
+            alt="A gift box wrapped in shiny paper with a bow"
+            class="rounded mb-4 mx-auto image-hover"
+            height="200"
+            id="gift-box"
+            src="https://storage.googleapis.com/a1aa/image/mDhXDQAUl4JQIFL8tdXeCUCwIfkfGtGSmABAzgoflSzNFDyPB.jpg"
+            width="300"
+          />
+          <p class="quote-animation">
+            "Hope your birthday is just like you...totally awesome."
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- End Page -->
+    <div class="hidden flex-col items-center justify-center space-y-4 fade-in" id="end-page">
+      <h1 class="text-4xl md:text-5xl text-pink-600 text-center">
+        Thank You for Celebrating!
+      </h1>
+      <p class="text-xl md:text-2xl text-pink-500 text-center px-4">
+        May all your dreams come true, and may this year bring you everything you've been wishing for!
+      </p>
+      <button class="text-6xl text-red-500 heart-beat" id="end-button">
+        <i class="fas fa-heart"></i>
+      </button>
+    </div>
+
+    <script>
+      // Button actions
+      const startButton = document.getElementById("start-button");
+      const startPage = document.getElementById("start-page");
+      const mainPage = document.getElementById("main-page");
+      const endPage = document.getElementById("end-page");
+      const endButton = document.getElementById("end-button");
+
+      // Show main page when start button is clicked
+      startButton.addEventListener("click", () => {
+        startPage.classList.add("hidden");
+        mainPage.classList.remove("hidden");
+      });
+
+      // Show end page when end button is clicked
+      endButton.addEventListener("click", () => {
+        mainPage.classList.add("hidden");
+        endPage.classList.remove("hidden");
+      });
+
+      // Moving balloons logic
+      const balloons = [
+        document.getElementById("moving-balloon-1"),
+        document.getElementById("moving-balloon-2"),
+        document.getElementById("moving-balloon-3"),
+        document.getElementById("moving-balloon-4"),
+      ];
+
+      balloons.forEach((balloon) => {
+        balloon.addEventListener("mouseover", () => {
+          const randomX = Math.random() * (window.innerWidth - balloon.clientWidth);
+          const randomY = Math.random() * (window.innerHeight - balloon.clientHeight);
+          balloon.style.transform = `translate(${randomX}px, ${randomY}px)`;
+        });
+      });
+
+      // Gift box blow and heart blast logic
+      const giftBox = document.getElementById("gift-box");
+      const giftBoxContainer = document.getElementById("gift-box-container");
+
+      giftBox.addEventListener("mouseover", () => {
+        // Create hearts
+        for (let i = 0; i < 20; i++) {
+          const heart = document.createElement("div");
+          heart.classList.add("heart-blast");
+          heart.style.left = `${Math.random() * 100}%`;
+          heart.style.top = `${Math.random() * 100}%`;
+          heart.innerHTML = "<i class='fas fa-heart'></i>";
+          giftBoxContainer.appendChild(heart);
+        }
+        giftBox.style.opacity = 0; // Hide gift box after hover
+      });
+    </script>
+  </body>
+</html>
